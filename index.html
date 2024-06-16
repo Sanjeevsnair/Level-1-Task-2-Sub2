@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Greeting</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f7f7f7;
+        }
+
+        #greetingButton {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgb(22, 22, 22, 0.5);
+            transition: background-color 0.3s, transform 0.2s ease-out;
+        }
+
+        #greetingButton:hover {
+            background-color: #45a049;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+    <button id="greetingButton">Show Greeting</button>
+    <script>
+        document.getElementById('greetingButton').addEventListener('click', function () {
+            var today = new Date();
+            var hour = today.getHours(); var greeting;
+            var image;
+
+            if (hour >= 5 && hour < 12) {
+                greeting = "Good Morning";
+                image = 'url("1.jpeg")';
+            }
+            else if (hour >= 12 && hour < 18) {
+                greeting = "Good Afternoon";
+                image = 'url("2.jpeg")';
+            }
+            else if (hour >= 18 && hour < 20) {
+                greeting = "Good Evening";
+                image = 'url("3.jpeg")';
+            }
+            else {
+                greeting = "Good Night";
+                image = 'url("4.jpeg")';
+            }
+            document.body.style.backgroundImage = image;
+            alert(greeting);
+        });
+
+    </script>
+</body>
+
+</html>
